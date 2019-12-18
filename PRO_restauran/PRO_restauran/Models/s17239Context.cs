@@ -29,8 +29,6 @@ namespace PRO_restauran.Models
         public virtual DbSet<Type> Type { get; set; }
         public virtual DbSet<User> User { get; set; }
 
-        // Unable to generate entity type for table 'dbo.DEPT'. Please see the warning messages.
-        // Unable to generate entity type for table 'dbo.SALGRADE'. Please see the warning messages.
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

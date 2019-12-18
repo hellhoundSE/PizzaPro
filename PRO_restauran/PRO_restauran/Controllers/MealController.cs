@@ -18,6 +18,12 @@ namespace PRO_restauran.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Method returns all available meals
+        /// </summary>
+        /// <returns>
+        /// return list of all meals
+        /// </returns>
         [HttpGet("/all")]
         public IActionResult GetMeals()
         {

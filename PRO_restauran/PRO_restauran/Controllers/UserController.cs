@@ -18,6 +18,7 @@ namespace PRO_restauran.Controllers
             _context = context;
         }
 
+        
         [HttpGet("/all")]
         public IActionResult GetUsers()
         {

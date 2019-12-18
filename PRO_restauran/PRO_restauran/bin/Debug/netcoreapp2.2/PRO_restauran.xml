@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PRO_restauran</name>
+    </assembly>
+    <members>
+        <member name="M:PRO_restauran.Controllers.MealController.GetMeals">
+            <summary>
+            Method returns all available meals
+            </summary>
+            <returns>
+            return list of all meals
+            </returns>
+        </member>
+    </members>
+</doc>
