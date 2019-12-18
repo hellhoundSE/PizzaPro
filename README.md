@@ -1,6 +1,6 @@
 This repository was created for subject PRO
 
-The essence of the subject is to create a web application for pizzeria using ASP.NET
+The idea of the subject is to create a web-application for pizzeria based on  ASP.NET
 
 Here is list of business requirements: 
 
