@@ -19,16 +19,16 @@ namespace PRO_restauran.Controllers
         }
 
         [HttpGet("/all")]
-        public IActionResult getMeals()
+        public IActionResult GetMeals()
         {
-            List<Meal> list = _context.Meal.ToList();
+            List<Meal> list = _context.Meal.OrderBy(m => m.TypeIdType).ToList();
             if (list == null)
                 return NotFound();
             return Ok(list);
         }
 
         [HttpGet("(name:string)")]
-        public IActionResult getMealByName(string name)
+        public IActionResult GetMealByName(string name)
         {
             List<Meal> list = _context.Meal.Where(meal => meal.Name.StartsWith(name)).ToList();
             if(list == null)
@@ -37,7 +37,7 @@ namespace PRO_restauran.Controllers
         }
 
         [HttpGet("(id:int)")]
-        public IActionResult getMealById(int id)
+        public IActionResult GetMealById(int id)
         {
             Meal meal = _context.Meal.FirstOrDefault(m => m.IdMeal == id);
             if (meal == null)
@@ -46,7 +46,7 @@ namespace PRO_restauran.Controllers
         }
 
         [HttpGet("/description(description:string)")]
-        public IActionResult getMealByDescription(string description)
+        public IActionResult GetMealByDescription(string description)
         {
             List<Meal> list = _context.Meal.Where(meal => meal.Description.Contains(description)).ToList();
             if (list == null)
@@ -55,12 +55,46 @@ namespace PRO_restauran.Controllers
         }
 
         [HttpGet("/price(price:double)")]
-        public IActionResult getMealByPrice(double price)
+        public IActionResult GetMealByPrice(double price)
         {
             List<Meal> list = _context.Meal.Where(meal => meal.Price <= price).ToList();
             if (list == null)
                 return NotFound();
             return Ok(list);
+        }
+
+        [HttpPost]
+        public IActionResult AddMeal(Meal meal)
+        {
+            _context.Meal.Add(meal);
+            _context.SaveChanges();
+            return Ok(meal);
+        }
+
+        [HttpPut]
+        public IActionResult UpdateMeal(Meal meal)
+        {
+            if (_context.Meal.FirstOrDefault(m => m.IdMeal == m.IdMeal) == null)
+            {
+                return NotFound();
+            }
+            _context.Meal.Attach(meal);
+            _context.Entry(meal).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _context.SaveChanges();
+            return Ok(meal);
+        }
+
+        [HttpDelete("{id:int}")]
+        public IActionResult DeleteMeal(int id)
+        {
+            Meal meal = _context.Meal.FirstOrDefault(m => m.IdMeal == id);
+            if (meal == null)
+            {
+                return NotFound();
+            }
+            _context.Meal.Remove(meal);
+            _context.SaveChanges();
+            return Ok(meal);
         }
     }
 }

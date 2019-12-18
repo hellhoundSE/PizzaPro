@@ -19,7 +19,7 @@ namespace PRO_restauran.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public IActionResult getDeliveryById(int id)
+        public IActionResult GetDeliveryById(int id)
         {
             Delivery delivery = _context.Delivery.FirstOrDefault(d => d.IdDelivery==id);
             if (delivery == null)
@@ -28,13 +28,46 @@ namespace PRO_restauran.Controllers
         }
 
         [HttpGet("user/{userId:int}")]
-        public IActionResult getDeliveryByUserId(int userId)
+        public IActionResult GetDeliveryByUserId(int userId)
         {
-            List<Delivery> list = _context.Delivery.Where(delivery => delivery.UserIdUser == userId).ToList();
+            List<Delivery> list = _context.Delivery.Where(delivery => delivery.UserIdUser == userId).OrderBy(d => d.DeliveryTime).ToList();
             if (list == null)
                 return NotFound();
             return Ok(list);
         }
 
+        [HttpPost]
+        public IActionResult AddDelivery(Delivery delivery)
+        {
+            _context.Delivery.Add(delivery);
+            _context.SaveChanges();
+            return Ok(delivery);
+        }
+
+        [HttpPut]
+        public IActionResult UpdateDelivery(Delivery delivery)
+        {
+            if(_context.Delivery.FirstOrDefault(d => d.IdDelivery == delivery.IdDelivery) == null)
+            {
+                return NotFound();
+            }
+            _context.Delivery.Attach(delivery);
+            _context.Entry(delivery).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _context.SaveChanges();
+            return Ok(delivery);
+        }
+
+        [HttpDelete("{id:int}")]
+        public IActionResult DeleteDelivery(int id)
+        {
+            Delivery delivery = _context.Delivery.FirstOrDefault(d => d.IdDelivery == id);
+            if (delivery == null)
+            {
+                return NotFound();
+            }
+            _context.Delivery.Remove(delivery);
+            _context.SaveChanges();
+            return Ok(delivery);
+        }
     }
 }

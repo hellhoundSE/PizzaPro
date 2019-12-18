@@ -20,21 +20,55 @@ namespace PRO_restauran.Controllers
         }
 
         [HttpGet("/all")]
-        public IActionResult getDeliverymans()
+        public IActionResult GetDeliverymans()
         {
-            List<Deliveryman> list = _context.Deliveryman.ToList();
+            List<Deliveryman> list = _context.Deliveryman.OrderBy(d => d.Name).ToList();
             if (list == null)
                 return NotFound();
             return Ok(list);
         }
 
         [HttpGet("(id:int)")]
-        public IActionResult getDeliverymanById(int id)
+        public IActionResult GetDeliverymanById(int id)
         {
             Deliveryman meal = _context.Deliveryman.FirstOrDefault(m => m.IdDeliveryman == id);
             if (meal == null)
                 return NotFound();
             return Ok(meal);
+        }
+
+        [HttpPost]
+        public IActionResult AddDeliveryman(Deliveryman deliveryman)
+        {
+            _context.Deliveryman.Add(deliveryman);
+            _context.SaveChanges();
+            return Ok(deliveryman);
+        }
+
+        [HttpPut]
+        public IActionResult UpdateDeliveryman(Deliveryman deliveryman)
+        {
+            if (_context.Deliveryman.FirstOrDefault(d => d.IdDeliveryman== deliveryman.IdDeliveryman) == null)
+            {
+                return NotFound();
+            }
+            _context.Deliveryman.Attach(deliveryman);
+            _context.Entry(deliveryman).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _context.SaveChanges();
+            return Ok(deliveryman);
+        }
+
+        [HttpDelete("{id:int}")]
+        public IActionResult DeleteDeliveryman(int id)
+        {
+            Deliveryman deliveryman = _context.Deliveryman.FirstOrDefault(d => d.IdDeliveryman == id);
+            if (deliveryman == null)
+            {
+                return NotFound();
+            }
+            _context.Deliveryman.Remove(deliveryman);
+            _context.SaveChanges();
+            return Ok(deliveryman);
         }
     }
 }

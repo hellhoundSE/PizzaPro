@@ -19,13 +19,14 @@ namespace PRO_restauran.Controllers
         }
 
         [HttpGet("type/{typeId:int}")]
-        public IActionResult getAdditionalById(int typeId)
+        public IActionResult GetAdditionalById(int typeId)
         {
             List<Additional> list = _context.Additional.Where(additional => additional.TypeIdType == typeId).ToList();
             if (list == null)
                 return NotFound();
             return Ok(list);
         }
+
 
 
 
