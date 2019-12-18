@@ -1,0 +1,16 @@
+C:\Users\ruslan\Desktop\Study\PRO\PRO_restauran\PRO_restauran\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\ruslan\Desktop\Study\PRO\PRO_restauran\PRO_restauran\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\ruslan\Desktop\Study\PRO\PRO_restauran\PRO_restauran\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+C:\Users\ruslan\Desktop\Study\PRO\PRO_restauran\PRO_restauran\bin\Debug\netcoreapp2.2\PRO_restauran.deps.json
+C:\Users\ruslan\Desktop\Study\PRO\PRO_restauran\PRO_restauran\bin\Debug\netcoreapp2.2\PRO_restauran.runtimeconfig.json
+C:\Users\ruslan\Desktop\Study\PRO\PRO_restauran\PRO_restauran\bin\Debug\netcoreapp2.2\PRO_restauran.runtimeconfig.dev.json
+C:\Users\ruslan\Desktop\Study\PRO\PRO_restauran\PRO_restauran\bin\Debug\netcoreapp2.2\PRO_restauran.dll
+C:\Users\ruslan\Desktop\Study\PRO\PRO_restauran\PRO_restauran\obj\Debug\netcoreapp2.2\PRO_restauran.csprojAssemblyReference.cache
+C:\Users\ruslan\Desktop\Study\PRO\PRO_restauran\PRO_restauran\obj\Debug\netcoreapp2.2\PRO_restauran.RazorAssemblyInfo.cache
+C:\Users\ruslan\Desktop\Study\PRO\PRO_restauran\PRO_restauran\obj\Debug\netcoreapp2.2\PRO_restauran.RazorAssemblyInfo.cs
+C:\Users\ruslan\Desktop\Study\PRO\PRO_restauran\PRO_restauran\obj\Debug\netcoreapp2.2\PRO_restauran.AssemblyInfoInputs.cache
+C:\Users\ruslan\Desktop\Study\PRO\PRO_restauran\PRO_restauran\obj\Debug\netcoreapp2.2\PRO_restauran.AssemblyInfo.cs
+C:\Users\ruslan\Desktop\Study\PRO\PRO_restauran\PRO_restauran\obj\Debug\netcoreapp2.2\PRO_restauran.RazorTargetAssemblyInfo.cache
+C:\Users\ruslan\Desktop\Study\PRO\PRO_restauran\PRO_restauran\bin\Debug\netcoreapp2.2\PRO_restauran.pdb
+C:\Users\ruslan\Desktop\Study\PRO\PRO_restauran\PRO_restauran\obj\Debug\netcoreapp2.2\PRO_restauran.dll
+C:\Users\ruslan\Desktop\Study\PRO\PRO_restauran\PRO_restauran\obj\Debug\netcoreapp2.2\PRO_restauran.pdb

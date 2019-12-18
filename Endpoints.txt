@@ -1,0 +1,16 @@
+Meal
+	all
+	by types
+	by name
+	by description
+	by price
+Delivery
+	by id
+	by user_name
+	by user_id
+Additionally
+	by type_name
+	by type_id
+	by price
+	by meal
+	
