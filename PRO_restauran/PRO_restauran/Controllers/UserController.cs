@@ -19,7 +19,7 @@ namespace PRO_restauran.Controllers
         }
 
         
-        [HttpGet("/all")]
+        [HttpGet]
         public IActionResult GetUsers()
         {
             return Ok(_context.User.ToList());

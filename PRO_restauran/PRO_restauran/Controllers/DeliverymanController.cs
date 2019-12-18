@@ -19,7 +19,7 @@ namespace PRO_restauran.Controllers
             _context = context;
         }
 
-        [HttpGet("/all")]
+        [HttpGet]
         public IActionResult GetDeliverymans()
         {
             List<Deliveryman> list = _context.Deliveryman.OrderBy(d => d.Name).ToList();

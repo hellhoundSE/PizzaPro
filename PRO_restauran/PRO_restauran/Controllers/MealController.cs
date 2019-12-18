@@ -24,7 +24,7 @@ namespace PRO_restauran.Controllers
         /// <returns>
         /// return list of all meals
         /// </returns>
-        [HttpGet("/all")]
+        [HttpGet]
         public IActionResult GetMeals()
         {
             List<Meal> list = _context.Meal.OrderBy(m => m.TypeIdType).ToList();
