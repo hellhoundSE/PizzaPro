@@ -18,6 +18,13 @@ namespace PRO_restauran.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Methond returns delivery with given ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>
+        /// Delivery object with given ID
+        /// </returns>
         [HttpGet("{id:int}")]
         public IActionResult GetDeliveryById(int id)
         {
@@ -26,7 +33,13 @@ namespace PRO_restauran.Controllers
                 return NotFound();
             return Ok(delivery);
         }
-
+        /// <summary>
+        /// Methonds returns deliveries for given user
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns>
+        /// Returns list of user's delivery
+        /// </returns>
         [HttpGet("user/{userId:int}")]
         public IActionResult GetDeliveryByUserId(int userId)
         {
@@ -36,6 +49,13 @@ namespace PRO_restauran.Controllers
             return Ok(list);
         }
 
+        /// <summary>
+        /// Post method to add new delivery
+        /// </summary>
+        /// <param name="delivery"></param>
+        /// <returns>
+        /// Returns new added delivery
+        /// </returns>
         [HttpPost]
         public IActionResult AddDelivery(Delivery delivery)
         {
@@ -44,6 +64,13 @@ namespace PRO_restauran.Controllers
             return Ok(delivery);
         }
 
+        /// <summary>
+        /// Put method to update delivery
+        /// </summary>
+        /// <param name="delivery"></param>
+        /// <returns>
+        /// Return new updated delivery
+        /// </returns>
         [HttpPut]
         public IActionResult UpdateDelivery(Delivery delivery)
         {
@@ -57,6 +84,13 @@ namespace PRO_restauran.Controllers
             return Ok(delivery);
         }
 
+        /// <summary>
+        /// Delete method to delete given delivery
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>
+        /// Returns just deleted delivery
+        /// </returns>
         [HttpDelete("{id:int}")]
         public IActionResult DeleteDelivery(int id)
         {

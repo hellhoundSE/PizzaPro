@@ -18,13 +18,24 @@ namespace PRO_restauran.Controllers
             _context = context;
         }
 
-        
+        /// <summary>
+        /// Method returns all users
+        /// </summary>
+        /// <returns>
+        /// Return list of all users
+        /// </returns>
         [HttpGet]
         public IActionResult GetUsers()
         {
             return Ok(_context.User.ToList());
         }
-
+        /// <summary>
+        /// Methods returns meals with given ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>
+        /// Return user object
+        /// </returns>
         [HttpGet("{id:int}")]
         public IActionResult GetUser(int id)
         {
@@ -33,7 +44,13 @@ namespace PRO_restauran.Controllers
                 return NotFound();
             return Ok(user);
         }
-
+        /// <summary>
+        /// Post method to add new user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>
+        /// Returns new added user
+        /// </returns>
         [HttpPost]
         public IActionResult AddUser(User user)
         {
@@ -41,7 +58,13 @@ namespace PRO_restauran.Controllers
             _context.SaveChanges();
             return Ok(user);
         }
-
+        /// <summary>
+        /// Put method to update user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>
+        /// Return new updated user
+        /// </returns>
         [HttpPut]
         public IActionResult UpdateUser(User user)
         {
@@ -54,7 +77,13 @@ namespace PRO_restauran.Controllers
             _context.SaveChanges();
             return Ok(user);
         }
-
+        /// <summary>
+        /// Delete method to delete given user
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>
+        /// Returns just deleted user
+        /// </returns>
         [HttpDelete("{id:int}")]
         public IActionResult DeleteUser(int id)
         {

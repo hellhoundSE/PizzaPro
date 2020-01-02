@@ -17,7 +17,13 @@ namespace PRO_restauran.Controllers
         {
             _context = context;
         }
-
+        /// <summary>
+        /// Method returns all additional meal with given ID
+        /// </summary>
+        /// <param name="typeId"></param>
+        /// <returns>
+        /// Return list oj additional meals
+        /// </returns>
         [HttpGet("{typeId:int}")]
         public IActionResult GetAdditionalById(int typeId)
         {

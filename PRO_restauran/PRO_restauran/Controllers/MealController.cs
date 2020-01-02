@@ -22,7 +22,7 @@ namespace PRO_restauran.Controllers
         /// Method returns all available meals
         /// </summary>
         /// <returns>
-        /// return list of all meals
+        /// Return list of all meals
         /// </returns>
         [HttpGet]
         public IActionResult GetMeals()
@@ -32,7 +32,13 @@ namespace PRO_restauran.Controllers
                 return NotFound();
             return Ok(list);
         }
-
+        /// <summary>
+        /// Methods returns meals with given name
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns>
+        /// Return list of meals
+        /// </returns>
         [HttpGet("(name:string)")]
         public IActionResult GetMealByName(string name)
         {
@@ -41,7 +47,13 @@ namespace PRO_restauran.Controllers
                 return NotFound();
             return Ok(list);
         }
-
+        /// <summary>
+        /// Methods returns meal with given ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>
+        /// Return meal object
+        /// </returns>
         [HttpGet("(id:int)")]
         public IActionResult GetMealById(int id)
         {
@@ -51,6 +63,13 @@ namespace PRO_restauran.Controllers
             return Ok(meal);
         }
 
+        /// <summary>
+        /// Methods returns meals with given description
+        /// </summary>
+        /// <param name="description"></param>
+        /// <returns>
+        /// Return list of meals
+        /// </returns>
         [HttpGet("/description(description:string)")]
         public IActionResult GetMealByDescription(string description)
         {
@@ -60,6 +79,13 @@ namespace PRO_restauran.Controllers
             return Ok(list);
         }
 
+        /// <summary>
+        /// Method returns list of neals with less or equals then given price
+        /// </summary>
+        /// <param name="price"></param>
+        /// <returns>
+        /// Returns list of meals
+        /// </returns>
         [HttpGet("/price(price:double)")]
         public IActionResult GetMealByPrice(double price)
         {
@@ -68,7 +94,13 @@ namespace PRO_restauran.Controllers
                 return NotFound();
             return Ok(list);
         }
-
+        /// <summary>
+        /// Post method to add new meal
+        /// </summary>
+        /// <param name="meal"></param>
+        /// <returns>
+        /// Returns new added meal
+        /// </returns>
         [HttpPost]
         public IActionResult AddMeal(Meal meal)
         {
@@ -76,7 +108,13 @@ namespace PRO_restauran.Controllers
             _context.SaveChanges();
             return Ok(meal);
         }
-
+        /// <summary>
+        /// Put method to update meal
+        /// </summary>
+        /// <param name="meal"></param>
+        /// <returns>
+        /// Return new updated meal
+        /// </returns>
         [HttpPut]
         public IActionResult UpdateMeal(Meal meal)
         {
@@ -89,7 +127,13 @@ namespace PRO_restauran.Controllers
             _context.SaveChanges();
             return Ok(meal);
         }
-
+        /// <summary>
+        /// Delete method to delete given meal
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>
+        /// Returns just deleted meal
+        /// </returns>
         [HttpDelete("{id:int}")]
         public IActionResult DeleteMeal(int id)
         {

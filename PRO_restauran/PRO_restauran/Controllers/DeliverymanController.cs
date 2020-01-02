@@ -8,6 +8,7 @@ using PRO_restauran.Models;
 
 namespace PRO_restauran.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class DeliverymanController : ControllerBase
@@ -19,6 +20,12 @@ namespace PRO_restauran.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Method returns all deliverymen
+        /// </summary>
+        /// <returns>
+        /// Return list of all deliverymen
+        /// </returns>
         [HttpGet]
         public IActionResult GetDeliverymans()
         {
@@ -27,7 +34,13 @@ namespace PRO_restauran.Controllers
                 return NotFound();
             return Ok(list);
         }
-
+        /// <summary>
+        /// Methond returns deliveryman with given ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>
+        /// Deliveryman object with given ID
+        /// </returns>
         [HttpGet("(id:int)")]
         public IActionResult GetDeliverymanById(int id)
         {
@@ -36,7 +49,13 @@ namespace PRO_restauran.Controllers
                 return NotFound();
             return Ok(meal);
         }
-
+        /// <summary>
+        /// Post method to add new deliveryman
+        /// </summary>
+        /// <param name="deliveryman"></param>
+        /// <returns>
+        /// Returns new added deliveryman
+        /// </returns>
         [HttpPost]
         public IActionResult AddDeliveryman(Deliveryman deliveryman)
         {
@@ -44,7 +63,13 @@ namespace PRO_restauran.Controllers
             _context.SaveChanges();
             return Ok(deliveryman);
         }
-
+        /// <summary>
+        /// Put method to update deliveryman
+        /// </summary>
+        /// <param name="deliveryman"></param>
+        /// <returns>
+        /// Return updated deliveryman
+        /// </returns>
         [HttpPut]
         public IActionResult UpdateDeliveryman(Deliveryman deliveryman)
         {
@@ -57,7 +82,13 @@ namespace PRO_restauran.Controllers
             _context.SaveChanges();
             return Ok(deliveryman);
         }
-
+        /// <summary>
+        /// Delete method to delete given delivery
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>
+        /// Return object of deleted deliveryman
+        /// </returns>
         [HttpDelete("{id:int}")]
         public IActionResult DeleteDeliveryman(int id)
         {
