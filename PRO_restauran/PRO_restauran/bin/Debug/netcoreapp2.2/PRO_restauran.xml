@@ -4,12 +4,217 @@
         <name>PRO_restauran</name>
     </assembly>
     <members>
+        <member name="M:PRO_restauran.Controllers.AdditionalController.GetAdditionalById(System.Int32)">
+            <summary>
+            Method returns all additional meal with given ID
+            </summary>
+            <param name="typeId"></param>
+            <returns>
+            Return list oj additional meals
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.DeliveryController.GetDeliveryById(System.Int32)">
+            <summary>
+            Methond returns delivery with given ID
+            </summary>
+            <param name="id"></param>
+            <returns>
+            Delivery object with given ID
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.DeliveryController.GetDeliveryByUserId(System.Int32)">
+            <summary>
+            Methonds returns deliveries for given user
+            </summary>
+            <param name="userId"></param>
+            <returns>
+            Returns list of user's delivery
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.DeliveryController.AddDelivery(PRO_restauran.Models.Delivery)">
+            <summary>
+            Post method to add new delivery
+            </summary>
+            <param name="delivery"></param>
+            <returns>
+            Returns new added delivery
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.DeliveryController.UpdateDelivery(PRO_restauran.Models.Delivery)">
+            <summary>
+            Put method to update delivery
+            </summary>
+            <param name="delivery"></param>
+            <returns>
+            Return new updated delivery
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.DeliveryController.DeleteDelivery(System.Int32)">
+            <summary>
+            Delete method to delete given delivery
+            </summary>
+            <param name="id"></param>
+            <returns>
+            Returns just deleted delivery
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.DeliverymanController.GetDeliverymans">
+            <summary>
+            Method returns all deliverymen
+            </summary>
+            <returns>
+            Return list of all deliverymen
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.DeliverymanController.GetDeliverymanById(System.Int32)">
+            <summary>
+            Methond returns deliveryman with given ID
+            </summary>
+            <param name="id"></param>
+            <returns>
+            Deliveryman object with given ID
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.DeliverymanController.AddDeliveryman(PRO_restauran.Models.Deliveryman)">
+            <summary>
+            Post method to add new deliveryman
+            </summary>
+            <param name="deliveryman"></param>
+            <returns>
+            Returns new added deliveryman
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.DeliverymanController.UpdateDeliveryman(PRO_restauran.Models.Deliveryman)">
+            <summary>
+            Put method to update deliveryman
+            </summary>
+            <param name="deliveryman"></param>
+            <returns>
+            Return updated deliveryman
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.DeliverymanController.DeleteDeliveryman(System.Int32)">
+            <summary>
+            Delete method to delete given delivery
+            </summary>
+            <param name="id"></param>
+            <returns>
+            Return object of deleted deliveryman
+            </returns>
+        </member>
         <member name="M:PRO_restauran.Controllers.MealController.GetMeals">
             <summary>
             Method returns all available meals
             </summary>
             <returns>
-            return list of all meals
+            Return list of all meals
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.MealController.GetMealByName(System.String)">
+            <summary>
+            Methods returns meals with given name
+            </summary>
+            <param name="name"></param>
+            <returns>
+            Return list of meals
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.MealController.GetMealById(System.Int32)">
+            <summary>
+            Methods returns meal with given ID
+            </summary>
+            <param name="id"></param>
+            <returns>
+            Return meal object
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.MealController.GetMealByDescription(System.String)">
+            <summary>
+            Methods returns meals with given description
+            </summary>
+            <param name="description"></param>
+            <returns>
+            Return list of meals
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.MealController.GetMealByPrice(System.Double)">
+            <summary>
+            Method returns list of neals with less or equals then given price
+            </summary>
+            <param name="price"></param>
+            <returns>
+            Returns list of meals
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.MealController.AddMeal(PRO_restauran.Models.Meal)">
+            <summary>
+            Post method to add new meal
+            </summary>
+            <param name="meal"></param>
+            <returns>
+            Returns new added meal
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.MealController.UpdateMeal(PRO_restauran.Models.Meal)">
+            <summary>
+            Put method to update meal
+            </summary>
+            <param name="meal"></param>
+            <returns>
+            Return new updated meal
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.MealController.DeleteMeal(System.Int32)">
+            <summary>
+            Delete method to delete given meal
+            </summary>
+            <param name="id"></param>
+            <returns>
+            Returns just deleted meal
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.UserController.GetUsers">
+            <summary>
+            Method returns all users
+            </summary>
+            <returns>
+            Return list of all users
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.UserController.GetUser(System.Int32)">
+            <summary>
+            Methods returns meals with given ID
+            </summary>
+            <param name="id"></param>
+            <returns>
+            Return user object
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.UserController.AddUser(PRO_restauran.Models.User)">
+            <summary>
+            Post method to add new user
+            </summary>
+            <param name="user"></param>
+            <returns>
+            Returns new added user
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.UserController.UpdateUser(PRO_restauran.Models.User)">
+            <summary>
+            Put method to update user
+            </summary>
+            <param name="user"></param>
+            <returns>
+            Return new updated user
+            </returns>
+        </member>
+        <member name="M:PRO_restauran.Controllers.UserController.DeleteUser(System.Int32)">
+            <summary>
+            Delete method to delete given user
+            </summary>
+            <param name="id"></param>
+            <returns>
+            Returns just deleted user
             </returns>
         </member>
     </members>
